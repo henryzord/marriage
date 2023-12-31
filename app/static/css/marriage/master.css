@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Carattere&display=swap');
+
+body {
+    background-color: lightsalmon;
+}
+
+.cursiva {
+    font-family: 'Carattere', cursive;
+}
