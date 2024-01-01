@@ -1,9 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Carattere&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Carattere&family=Dancing+Script&display=swap');
 
-body {
-    background-color: lightsalmon;
+ :root {
+  --font: #876F4A;
 }
 
-.cursiva {
-    font-family: 'Carattere', cursive;
+body {
+    background-color: #ffffff;
+}
+
+.titulo-escuro {
+    font-family: 'Dancing Script', cursive;
+    color: #363636;
+}
+
+.titulo-claro {
+    font-family: 'Dancing Script', cursive;
+    color: var(--font);
+}
+
+.texto {
+    font-family: 'Caveat', cursive;
+    color: var(--font);
+    font-size: 20pt;
 }

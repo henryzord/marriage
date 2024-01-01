@@ -16,7 +16,6 @@
 <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img src="{% static 'images/favicon-32x32.png' %}"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -25,7 +24,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <p class="cursiva">Juliana & Henry</p>
+                        <p class="titulo-escuro" style="font-size: 16pt;">Juliana & Henry</p>
                     </li>
                     <li class="nav-item">
                         <a id="nav-link-index" class="nav-link" href="/marriage/">Página inicial</a>
@@ -48,9 +47,10 @@
     </nav>
 </header>
 
-<div class="container main-container">
-    <div class="row d-flex justify-content-center row-cols-1 row-cols-sm-1 row-cols-md-2">
-        <div class="col d-flex align-items-center">
+<!--<div class="container main-container">-->
+<div>
+    <div class="row">
+        <div class="col">
             {% block content %}{% endblock %}
         </div>
     </div>
