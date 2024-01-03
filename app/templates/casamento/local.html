@@ -1,0 +1,53 @@
+{% extends "casamento/master.html" %}
+
+{% load static %}
+
+{% block title %}
+    J&H - Local do evento
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-8">
+                <div class="row">
+                    <div class="col-12">
+                        <h1 class="subtitulo">Local do evento</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <p class="texto">
+                            O casamento será celebrado no Quintal 155, às 18h do dia 13 de abril de 2024.
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="d-flex justify-content-center">
+                            <img
+                                alt="imagem de lírio rosa"
+                                src="{% static 'images/lirio-rosa-2.png' %}"
+                                style="width: 200px;"
+                            >
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <div class="col-4">
+            <div class="row">
+                <div class="col">
+                    <div class="d-flex justify-content-center">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3465.983552885914!2d-53.79765312525441!3d-29.691256514986925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9503cbf18b8ba1ed%3A0x3467d1ebc31ef413!2sQuintal%20155!5e0!3m2!1spt-BR!2sbr!4v1704136523118!5m2!1spt-BR!2sbr"
+                            width="300" height="300"
+                            style="border:0;"
+                            allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

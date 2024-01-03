@@ -10,7 +10,7 @@
     <link rel="icon" href="{% static 'images/favicon-32x32.png' %}">
     <title>{% block title %}{% endblock %}</title>
     {% block additional-stylesheet %}{% endblock %}
-    <link rel="stylesheet" type="text/css" href="{% static 'css/marriage/master.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/casamento/master.css' %}">
 </head>
 <body>
 <header>
@@ -27,19 +27,19 @@
                         <p class="titulo-escuro" style="font-size: 16pt;">Juliana & Henry</p>
                     </li>
                     <li class="nav-item">
-                        <a id="nav-link-index" class="nav-link" href="/marriage/">Página inicial</a>
+                        <a id="nav-link-index" class="nav-link" href="/index">Página inicial</a>
                     </li>
                     <li class="nav-item">
-                        <a id="nav-link-experience" class="nav-link" href="/marriage/gift_list">Lista de presentes</a>
+                        <a id="nav-link-presentes" class="nav-link" href="/presentes">Lista de presentes</a>
                     </li>
                     <li class="nav-item">
-                        <a id="nav-link-highlights" class="nav-link" href="/marriage/confirm">Confirmar presença</a>
+                        <a id="nav-link-presenca" class="nav-link" href="/presenca">Confirmar presença</a>
                     </li>
                     <li class="nav-item">
-                        <a id="nav-link-highlights" class="nav-link" href="/marriage/photos">Galeria de fotos</a>
+                        <a id="nav-link-galeria" class="nav-link" href="/fotos">Galeria de fotos</a>
                     </li>
                     <li class="nav-item">
-                        <a id="nav-link-highlights" class="nav-link" href="/marriage/place">Local do evento</a>
+                        <a id="nav-link-local" class="nav-link" href="/local">Local do evento</a>
                     </li>
                 </ul>
             </div>
@@ -47,8 +47,7 @@
     </nav>
 </header>
 
-<!--<div class="container main-container">-->
-<div>
+<div style="padding-top: 20px;">
     <div class="row">
         <div class="col">
             {% block content %}{% endblock %}
@@ -56,5 +55,22 @@
     </div>
 </div>
 </body>
+<script type="application/javascript">
+    function activateLink() {
+        let path = window.location.pathname;
+        let page = path.split("/").pop();
+        // page = page.substring(0, page.indexOf('.'));
+        let element = null;
+        if(page.length === 0) {
+            element = document.getElementById('nav-link-index');
+        } else {
+            element = document.getElementById('nav-link-' + page);
+        }
+        if(element != null) {
+            element.classList.add('active');
+        }
+    }
+    activateLink();
+</script>
 {% block scripts %}{% endblock %}
 </html>
