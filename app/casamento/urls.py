@@ -9,6 +9,5 @@ urlpatterns = [
     path('index', views.index, name='index'),
     path('local', views.place, name='local do evento'),
     path('fotos', views.photos, name='galeria de fotos'),
-]  # + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-# TODO nota para o futuro: servir arquivos estáticos assim não
-#  é eficiente. Ler a documentação do DJango para mais detalhes!
+    path('presentes', views.gifts, name='lista de presentes'),
+]

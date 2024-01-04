@@ -31,3 +31,7 @@ body {
     color: var(--font);
     font-size: 13pt;
 }
+
+.card-hand:hover {
+    cursor: pointer;
+}

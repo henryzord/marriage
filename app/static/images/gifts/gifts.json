@@ -1,0 +1,12 @@
+[
+  {
+    "titulo": "Jantar Romântico",
+    "imagem": "/static/images/gifts/jantar.jpg",
+    "valor": "100"
+  },
+  {
+    "titulo": "Passeio de Lambreta",
+    "imagem": "/static/images/gifts/lambreta.jpg",
+    "valor": "200"
+  }
+]

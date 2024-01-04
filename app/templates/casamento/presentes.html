@@ -1,0 +1,41 @@
+{% extends "casamento/master.html" %}
+
+{% load static %}
+
+{% block title %}
+    J&H - Lista de presentes
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="row">
+                    <div class="col-12">
+                        <h1 class="subtitulo text-center">Lista de Presentes</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <p class="texto text-center">
+                            Ainda não sabe o que dar de presente? Confira as sugestões abaixo!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            {% for gift in gifts %}
+                <div class="col">
+                    <div class="card">
+                        <img src="{{ gift.imagem }}" class="card-img-top" alt="Foto do card">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ gift.titulo }}</h5>
+                            <p class="card-text">R$ {{ gift.valor }}</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

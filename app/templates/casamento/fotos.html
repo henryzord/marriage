@@ -3,7 +3,7 @@
 {% load static %}
 
 {% block title %}
-    J&H - Local do evento
+    J&H - Galeria de Fotos
 {% endblock %}
 
 {% block content %}
@@ -24,17 +24,32 @@
                 </div>
             </div>
         </div>
+        <!-- TODO begin região dos modais! -->
+        <!-- Modal -->
+        {% for photo in photos %}
+            <div class="modal fade" id="modal{{ photo.number }}" tabindex="-1" aria-labelledby="modal{{ photo.number }}Label" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <!--<h5 class="modal-title" id="modal{{ photo.number }}Label">Modal title</h5>-->
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <img src="{{ photo.name }}" class="card-img-top" alt="Foto do modal">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        <!-- TODO end região dos modais! -->
         <div class="row row-cols-1 row-cols-md-3 g-4">
             {% for photo in photos %}
                 <div class="col">
-                    <div class="card">
-                        <img src="{{ photo }}" class="card-img-top" alt="Foto do card">
-                        <!--<div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
-                                additional content. This content is a little bit longer.</p>
-                        </div>
-                        -->
+                    <div class="card-hand card" data-bs-toggle="modal" data-bs-target="#modal{{ photo.number }}">
+                        <img src="{{ photo.name }}" class="card-img-top" alt="Foto do card">
                     </div>
                 </div>
             {% endfor %}
