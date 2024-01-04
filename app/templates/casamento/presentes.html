@@ -3,7 +3,7 @@
 {% load static %}
 
 {% block title %}
-    J&H - Lista de presentes
+    J&H · Lista de presentes
 {% endblock %}
 
 {% block content %}
@@ -18,8 +18,54 @@
                 <div class="row">
                     <div class="col-12">
                         <p class="texto text-center">
-                            Ainda não sabe o que dar de presente? Confira as sugestões abaixo!
+                            <!--Ainda não sabe o que dar de presente? Confira as sugestões abaixo!-->
                         </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="modalCodigoPix" tabindex="-1" aria-labelledby="modalCodigoPixLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalCodigoPixLabel">Instruções</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <ol>
+                            <li>Leia o QR Code abaixo, ou copie a chave PIX;</li>
+                            <li>Mude o valor para a quantia desejada;</li>
+                            <li>Finalize a transferência pelo aplicativo do seu banco.</li>
+                        </ol>
+                        <div class="d-flex justify-content-center">
+                            <img
+                                src="{% static 'images/gifts/qrcode.png' %}"
+                                class="card-img-top" alt="QR Code" style="width: 50%; padding-bottom: 20px;"
+                            >
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <div class="row row-cols-1 row-cols-md-2 g-2">
+                                <div class="col col-12 col-md-8">
+                                    <!--<label for="campoTextoCodigoPix" class="form-label">Copiar código</label>-->
+                                    <input
+                                        type="text"
+                                        class="form-control form-control-plaintext" id="campoTextoCodigoPix"
+                                        aria-describedby="text" readonly
+                                        value="henry.cagnini@gmail.com"
+                                    >
+                                </div>
+                                <div class="col col-12 col-md-1">
+                                </div>
+                                <div class="col col-12 col-md-2">
+                                    <div class="d-flex justify-content-center">
+                                        <button id="buttonCopiarCodigoPix" type="button" class="btn btn-outline-dark">Copiar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
                     </div>
                 </div>
             </div>
@@ -32,10 +78,42 @@
                         <div class="card-body">
                             <h5 class="card-title">{{ gift.titulo }}</h5>
                             <p class="card-text">R$ {{ gift.valor }}</p>
+                            <div class="d-flex justify-content-end">
+                                <a href="#" class="btn btn-secondary"
+                                   data-bs-toggle="modal" data-bs-target="#modalCodigoPix">
+                                    Presentear esse
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
             {% endfor %}
         </div>
     </div>
+{% endblock %}
+{% block scripts %}
+<script type="application/javascript">
+    function reativarBotao() {
+        let button = document.getElementById("buttonCopiarCodigoPix");
+        button.classList.replace("btn-success", "btn-outline-dark");
+        button.innerHTML = "Copiar";
+    }
+
+    function copiarCodigoPix() {
+        let button = document.getElementById("buttonCopiarCodigoPix");
+
+        let inputField = document.getElementById("campoTextoCodigoPix");
+
+        // copia o código pix
+        inputField.select();
+        inputField.setSelectionRange(0, 99999);  // para dispositivos móveis
+        navigator.clipboard.writeText(inputField.value);
+
+        button.classList.replace("btn-outline-dark", "btn-success");
+        button.innerHTML = "Copiado!";
+
+        let timeoutID = setTimeout(reativarBotao, 5000);
+    }
+    document.getElementById("buttonCopiarCodigoPix").addEventListener("click", copiarCodigoPix);
+</script>
 {% endblock %}
