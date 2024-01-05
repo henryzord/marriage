@@ -10,4 +10,5 @@ urlpatterns = [
     path('local', views.place, name='local do evento'),
     path('fotos', views.photos, name='galeria de fotos'),
     path('presentes', views.gifts, name='lista de presentes'),
+    path('presenca', views.attendance, name='confirmar presença'),
 ]
