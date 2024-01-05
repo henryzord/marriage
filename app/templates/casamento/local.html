@@ -7,35 +7,38 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container">
+    <div class="container board shadow-sm p-3 mb-5 bg-body rounded">
         <div class="d-flex row row-cols-md-2 row-cols-sm-1">
             <div class="col-md-6 col-sm-12">
                 <div class="row">
                     <div class="col">
-                        <h1 class="subtitulo">Local do evento</h1>
+                        <h2 class="subtitulo">Local do evento</h2>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col">
-                        <p class="texto">
-                            O casamento será celebrado no Quintal 155, às 18h do dia 13 de abril de 2024.
-                        </p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <p class="texto">
-                            <b>Traje</b>
-                        </p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <p class="texto">
-                            Esporte fino
-                        </p>
-                    </div>
-                </div>
+                <dl class="row">
+                    <dt class="col-sm-3 texto">Salão</dt>
+                    <dd class="col-sm-9 texto">Quintal 155</dd>
+
+                    <dt class="col-sm-3 texto">Endereço</dt>
+                    <dd class="col-sm-9 texto">
+                        <ul class="list-unstyled">
+                            <li>Rua Motorista Mariano, 155</li>
+                            <li>Bairro Nossa Senhora das Dores</li>
+                            <li>Santa Maria, Rio Grande do Sul</li>
+                        </ul>
+                    </dd>
+
+                    <dt class="col-sm-3 texto">Data e Hora</dt>
+                    <dd class="col-sm-9 texto">
+                        <ul class="list-unstyled">
+                            <li>18 horas</li>
+                            <li>Sábado, 13 de abril de 2024</li>
+                        </ul>
+                    </dd>
+
+                    <dt class="col-sm-3 texto">Traje</dt>
+                    <dd class="col-sm-9 texto">Esporte fino</dd>
+                </dl>
             </div>
             <div class="col-md-6 col-sm-12">
                 <div class="d-flex justify-content-center">

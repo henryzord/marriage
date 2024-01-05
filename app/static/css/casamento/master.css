@@ -2,11 +2,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Carattere&family=Dancing+Script&family=Merriweather&display=swap');
 
 
- :root {
+:root {
   --font: #876F4A;
 }
 
 body {
+    background-color: #FFEEF7;
+}
+
+.board {
     background-color: #ffffff;
 }
 
@@ -23,13 +27,11 @@ body {
 .subtitulo {
     font-family: 'Caveat', cursive;
     color: var(--font);
-    font-size: 22pt;
 }
 
 .texto {
     font-family: 'Merriweather', serif;
     color: var(--font);
-    font-size: 13pt;
 }
 
 .card-hand:hover {
