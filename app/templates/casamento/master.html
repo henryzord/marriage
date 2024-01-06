@@ -27,33 +27,35 @@
                         <p class="titulo-escuro" style="font-size: 16pt;">Juliana & Henry</p>
                     </li>
                     <li class="nav-item">
-                        <a id="nav-link-index" class="nav-link" href="/index">Página inicial</a>
+                        <a id="nav-link-index" class="nav-link texto" href="/index">Página inicial</a>
                     </li>
                     <li class="nav-item">
-                        <a id="nav-link-local" class="nav-link" href="/local">Local do evento</a>
+                        <a id="nav-link-local" class="nav-link texto" href="/local">Local do evento</a>
                     </li>
                     <li class="nav-item">
-                        <a id="nav-link-presentes" class="nav-link" href="/presentes">Lista de presentes</a>
+                        <a id="nav-link-presentes" class="nav-link texto" href="/presentes">Lista de presentes</a>
                     </li>
                     <li class="nav-item">
-                        <a id="nav-link-presenca" class="nav-link" href="/presenca">Confirmar presença</a>
+                        <a id="nav-link-presenca" class="nav-link texto" href="/presenca">Confirmar presença</a>
                     </li>
                     <li class="nav-item">
-                        <a id="nav-link-galeria" class="nav-link" href="/fotos">Galeria de fotos</a>
+                        <a id="nav-link-galeria" class="nav-link texto" href="/fotos">Galeria de fotos</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 </header>
-
-<div style="padding-top: 20px;">
-    <div class="row">
-        <div class="col">
-            {% block content %}{% endblock %}
+<section>
+    <div class="container board shadow-sm p-3 mb-5 bg-body rounded">
+        <div class="row">
+            <div class="col">
+                {% block content %}{% endblock %}
+            </div>
         </div>
     </div>
-</div>
+</section>
+
 </body>
 <script type="application/javascript">
     function activateLink() {

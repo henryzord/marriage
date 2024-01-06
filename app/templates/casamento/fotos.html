@@ -7,52 +7,50 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container board shadow-sm p-3 mb-5 bg-body rounded">
-        <div class="row">
-            <div class="col-12">
-                <div class="row">
-                    <div class="col-12">
-                        <h2 class="subtitulo text-center">Galeria de fotos</h2>
-                    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="subtitulo cor-principal text-center">Galeria de fotos</h2>
                 </div>
-                <div class="row">
-                    <div class="col-12">
-                        <h6 class="texto text-center">
-                            Um espaço de lembranças!
-                        </h6>
+            </div>
+            <!--<div class="row">
+                <div class="col-12">
+                    <h6 class="texto text-center">
+                        Um espaço de lembranças!
+                    </h6>
+                </div>
+            </div>-->
+        </div>
+    </div>
+    <!-- TODO begin região dos modais! -->
+    <!-- Modal -->
+    {% for photo in photos %}
+        <div class="modal fade" id="modal{{ photo.number }}" tabindex="-1" aria-labelledby="modal{{ photo.number }}Label" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <!--<h5 class="modal-title" id="modal{{ photo.number }}Label">Modal title</h5>-->
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="{{ photo.name }}" class="card-img-top" alt="Foto do modal">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-golden texto" data-bs-dismiss="modal">Fechar</button>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- TODO begin região dos modais! -->
-        <!-- Modal -->
+    {% endfor %}
+    <!-- TODO end região dos modais! -->
+    <div class="row row-cols-1 row-cols-md-3 g-4">
         {% for photo in photos %}
-            <div class="modal fade" id="modal{{ photo.number }}" tabindex="-1" aria-labelledby="modal{{ photo.number }}Label" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <!--<h5 class="modal-title" id="modal{{ photo.number }}Label">Modal title</h5>-->
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <img src="{{ photo.name }}" class="card-img-top" alt="Foto do modal">
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                        </div>
-                    </div>
+            <div class="col">
+                <div class="card-hand card" data-bs-toggle="modal" data-bs-target="#modal{{ photo.number }}">
+                    <img src="{{ photo.name }}" class="card-img-top" alt="Foto do card">
                 </div>
             </div>
         {% endfor %}
-        <!-- TODO end região dos modais! -->
-        <div class="row row-cols-1 row-cols-md-3 g-4">
-            {% for photo in photos %}
-                <div class="col">
-                    <div class="card-hand card" data-bs-toggle="modal" data-bs-target="#modal{{ photo.number }}">
-                        <img src="{{ photo.name }}" class="card-img-top" alt="Foto do card">
-                    </div>
-                </div>
-            {% endfor %}
-        </div>
     </div>
 {% endblock %}

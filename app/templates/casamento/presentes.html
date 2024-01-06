@@ -7,88 +7,92 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container board shadow-sm p-3 mb-5 bg-body rounded">
-        <div class="row">
-            <div class="col-12">
-                <div class="row">
-                    <div class="col-12">
-                        <h2 class="subtitulo text-center">Lista de Presentes</h2>
-                    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="subtitulo cor-principal text-center">Lista de Presentes</h2>
                 </div>
-                <div class="row">
-                    <div class="col-12">
-                        <p class="texto text-center">
-                            <!--Ainda não sabe o que dar de presente? Confira as sugestões abaixo!-->
-                        </p>
-                    </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <p class="texto text-center">
+                        <!--Ainda não sabe o que dar de presente? Confira as sugestões abaixo!-->
+                    </p>
                 </div>
             </div>
         </div>
-        <div class="modal fade" id="modalCodigoPix" tabindex="-1" aria-labelledby="modalCodigoPixLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="modalCodigoPixLabel">Instruções</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal fade" id="modalCodigoPix" tabindex="-1" aria-labelledby="modalCodigoPixLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title subtitulo cor-principal" id="modalCodigoPixLabel">Instruções</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <ol class="texto cor-principal">
+                        <li>Leia o QR Code abaixo, ou copie a chave PIX;</li>
+                        <li>Mude o valor para a quantia desejada;</li>
+                        <li>Finalize a transferência pelo aplicativo do seu banco.</li>
+                    </ol>
+                    <div class="d-flex justify-content-center">
+                        <img
+                            src="{% static 'images/gifts/qrcode.png' %}"
+                            class="card-img-top" alt="QR Code" style="width: 50%; padding-bottom: 20px;"
+                        >
                     </div>
-                    <div class="modal-body">
-                        <ol>
-                            <li>Leia o QR Code abaixo, ou copie a chave PIX;</li>
-                            <li>Mude o valor para a quantia desejada;</li>
-                            <li>Finalize a transferência pelo aplicativo do seu banco.</li>
-                        </ol>
-                        <div class="d-flex justify-content-center">
-                            <img
-                                src="{% static 'images/gifts/qrcode.png' %}"
-                                class="card-img-top" alt="QR Code" style="width: 50%; padding-bottom: 20px;"
-                            >
-                        </div>
-                        <div class="d-flex justify-content-center">
-                            <div class="row row-cols-1 row-cols-md-2 g-2">
-                                <div class="col col-12 col-md-8">
-                                    <!--<label for="campoTextoCodigoPix" class="form-label">Copiar código</label>-->
-                                    <input
-                                        type="text"
-                                        class="form-control form-control-plaintext" id="campoTextoCodigoPix"
-                                        aria-describedby="text" readonly
-                                        value="henry.cagnini@gmail.com"
+                    <div class="d-flex justify-content-center">
+                        <div class="row row-cols-1 row-cols-md-2 g-2">
+                            <div class="col col-12 col-md-8">
+                                <!--<label for="campoTextoCodigoPix" class="form-label">Copiar código</label>-->
+                                <input
+                                    type="text"
+                                    class="form-control form-control-plaintext texto" id="campoTextoCodigoPix"
+                                    aria-describedby="text" readonly
+                                    value="henry.cagnini@gmail.com"
+                                >
+                            </div>
+                            <div class="col col-12 col-md-1">
+                            </div>
+                            <div class="col col-12 col-md-2">
+                                <div class="d-flex justify-content-center">
+                                    <button
+                                        type="button"
+                                        id="buttonCopiarCodigoPix"
+                                        class="btn btn-outline-dark texto"
                                     >
-                                </div>
-                                <div class="col col-12 col-md-1">
-                                </div>
-                                <div class="col col-12 col-md-2">
-                                    <div class="d-flex justify-content-center">
-                                        <button id="buttonCopiarCodigoPix" type="button" class="btn btn-outline-dark">Copiar</button>
-                                    </div>
+                                        Copiar
+                                    </button>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-golden texto" data-bs-dismiss="modal">Fechar</button>
                 </div>
             </div>
         </div>
-        <div class="row row-cols-1 row-cols-md-3 g-4">
-            {% for gift in gifts %}
-                <div class="col">
-                    <div class="card">
-                        <img src="{{ gift.imagem }}" class="card-img-top" alt="Foto do card">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ gift.titulo }}</h5>
-                            <p class="card-text">R$ {{ gift.valor }}</p>
-                            <div class="d-flex justify-content-end">
-                                <a href="#" class="btn btn-secondary"
-                                   data-bs-toggle="modal" data-bs-target="#modalCodigoPix">
-                                    Presentear esse
-                                </a>
-                            </div>
+    </div>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        {% for gift in gifts %}
+            <div class="col">
+                <div class="card">
+                    <img src="{{ gift.imagem }}" class="card-img-top" alt="Foto do card">
+                    <div class="card-body">
+                        <h5 class="card-title texto cor-principal">{{ gift.titulo }}</h5>
+                        <p class="card-text texto cor-principal">R$ {{ gift.valor }}</p>
+                        <div class="d-flex justify-content-end">
+                            <a href="#" class="btn btn-golden texto"
+                               data-bs-toggle="modal" data-bs-target="#modalCodigoPix">
+                                Presentear esse
+                            </a>
                         </div>
                     </div>
                 </div>
-            {% endfor %}
-        </div>
+            </div>
+        {% endfor %}
     </div>
 {% endblock %}
 {% block scripts %}
