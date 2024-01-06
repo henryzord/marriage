@@ -48,6 +48,7 @@
                                 <!--<label for="campoTextoCodigoPix" class="form-label">Copiar código</label>-->
                                 <input
                                     type="text"
+                                    style="background-color: var(--cor-principal-clara); color: white; padding-left: 10px;"
                                     class="form-control form-control-plaintext texto" id="campoTextoCodigoPix"
                                     aria-describedby="text" readonly
                                     value="henry.cagnini@gmail.com"
@@ -60,7 +61,7 @@
                                     <button
                                         type="button"
                                         id="buttonCopiarCodigoPix"
-                                        class="btn btn-outline-dark texto"
+                                        class="btn btn-outline-golden texto"
                                     >
                                         Copiar
                                     </button>
@@ -99,7 +100,7 @@
 <script type="application/javascript">
     function reativarBotao() {
         let button = document.getElementById("buttonCopiarCodigoPix");
-        button.classList.replace("btn-success", "btn-outline-dark");
+        button.classList.replace("btn-golden", "btn-outline-golden");
         button.innerHTML = "Copiar";
     }
 
@@ -113,7 +114,7 @@
         inputField.setSelectionRange(0, 99999);  // para dispositivos móveis
         navigator.clipboard.writeText(inputField.value);
 
-        button.classList.replace("btn-outline-dark", "btn-success");
+        button.classList.replace("btn-outline-golden", "btn-golden");
         button.innerHTML = "Copiado!";
 
         let timeoutID = setTimeout(reativarBotao, 5000);

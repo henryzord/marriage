@@ -22,10 +22,10 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <a id="brand" class="navbar-brand titulo" href="" style="color: var(--cor-principal);">
+                    Juliana & Henry
+                </a>
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <p class="titulo-escuro" style="font-size: 16pt;">Juliana & Henry</p>
-                    </li>
                     <li class="nav-item">
                         <a id="nav-link-index" class="nav-link texto" href="/index">Página inicial</a>
                     </li>
@@ -39,7 +39,7 @@
                         <a id="nav-link-presenca" class="nav-link texto" href="/presenca">Confirmar presença</a>
                     </li>
                     <li class="nav-item">
-                        <a id="nav-link-galeria" class="nav-link texto" href="/fotos">Galeria de fotos</a>
+                        <a id="nav-link-fotos" class="nav-link texto" href="/fotos">Galeria de fotos</a>
                     </li>
                 </ul>
             </div>
@@ -70,6 +70,8 @@
         }
         if(element != null) {
             element.classList.add('active');
+            element.style.color = 'var(--cor-principal)';
+            element.color.opacity = 0.9;
         }
     }
     activateLink();
