@@ -41,22 +41,14 @@ def photos(request):
 
 def gifts(request):
     with open(
-            os.path.join(str(settings.STATICFILES_DIRS[0]), 'images', 'gifts', 'gifts.json'), 
-            'r', 
-            encoding='utf-8'
-        ) as gift_file:
+        os.path.join(str(settings.STATICFILES_DIRS[0]), 'images', 'gifts', 'gifts.json'), 'r', encoding='utf-8'
+    ) as gift_file:
         gift_list = json.load(gift_file)
 
     context = {'gifts': gift_list}
 
-    from io import StringIO
-    from django.http import FileResponse
-
-    response = render(request, 'casamento/presentes.html', context)
-    return FileResponse(response.content, as_attachment=True, filename="gifts.html")
-
-    # return render(
-    #     request,
-    #     'casamento/presentes.html',
-    #     context=context
-    # )
+    return render(
+        request,
+        'casamento/presentes.html',
+        context=context
+    )

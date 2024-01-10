@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" rel="stylesheet">
+    <script crossorigin="anonymous" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <link rel="icon" href="../app/static/images/favicon-32x32.png">
+    <title>
+    J&H · Lista de presentes
+</title>
+    
+    <link rel="stylesheet" type="text/css" href="../app/static/css/casamento/master.css">
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <a id="brand" class="navbar-brand titulo" href="" style="color: var(--cor-principal);">
+                    Juliana & Henry
+                </a>
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a id="nav-link-index" class="nav-link texto" href="/index">Página inicial</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="nav-link-local" class="nav-link texto" href="/local">Local do evento</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="nav-link-presentes" class="nav-link texto" href="/presentes">Lista de presentes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="nav-link-presenca" class="nav-link texto" href="/presenca">Confirmar presença</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="nav-link-fotos" class="nav-link texto" href="/fotos">Galeria de fotos</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<section>
+    <div class="container board shadow-sm p-3 mb-5 bg-body rounded">
+        <div class="row">
+            <div class="col">
+                
+    <div class="row">
+        <div class="col-12">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="subtitulo cor-principal text-center">Lista de Presentes</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <p class="texto text-center">
+                        <!--Ainda não sabe o que dar de presente? Confira as sugestões abaixo!-->
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="modalCodigoPix" tabindex="-1" aria-labelledby="modalCodigoPixLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title subtitulo cor-principal" id="modalCodigoPixLabel">Instruções</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <ol class="texto cor-principal">
+                        <li>Leia o QR Code abaixo, ou copie a chave PIX;</li>
+                        <li>Mude o valor para a quantia desejada;</li>
+                        <li>Finalize a transferência pelo aplicativo do seu banco.</li>
+                    </ol>
+                    <div class="d-flex justify-content-center">
+                        <img
+                            src="../app/static/images/gifts/qrcode.png"
+                            class="card-img-top" alt="QR Code" style="width: 50%; padding-bottom: 20px;"
+                        >
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <div class="row row-cols-1 row-cols-md-2 g-2">
+                            <div class="col col-12 col-md-8">
+                                <!--<label for="campoTextoCodigoPix" class="form-label">Copiar código</label>-->
+                                <input
+                                    type="text"
+                                    style="background-color: var(--cor-principal-clara); color: white; padding-left: 10px;"
+                                    class="form-control form-control-plaintext texto" id="campoTextoCodigoPix"
+                                    aria-describedby="text" readonly
+                                    value="henry.cagnini@gmail.com"
+                                >
+                            </div>
+                            <div class="col col-12 col-md-1">
+                            </div>
+                            <div class="col col-12 col-md-2">
+                                <div class="d-flex justify-content-center">
+                                    <button
+                                        type="button"
+                                        id="buttonCopiarCodigoPix"
+                                        class="btn btn-outline-golden texto"
+                                    >
+                                        Copiar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-golden texto" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        
+            <div class="col">
+                <div class="card">
+                    <img src="../app/static/images/gifts/jantar.jpg" class="card-img-top" alt="Foto do card">
+                    <div class="card-body">
+                        <h5 class="card-title texto cor-principal">Jantar Romântico</h5>
+                        <p class="card-text texto cor-principal">R$ 100</p>
+                        <div class="d-flex justify-content-end">
+                            <a href="#" class="btn btn-golden texto"
+                               data-bs-toggle="modal" data-bs-target="#modalCodigoPix">
+                                Presentear esse
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="col">
+                <div class="card">
+                    <img src="../app/static/images/gifts/lambreta.jpg" class="card-img-top" alt="Foto do card">
+                    <div class="card-body">
+                        <h5 class="card-title texto cor-principal">Passeio de Lambreta</h5>
+                        <p class="card-text texto cor-principal">R$ 200</p>
+                        <div class="d-flex justify-content-end">
+                            <a href="#" class="btn btn-golden texto"
+                               data-bs-toggle="modal" data-bs-target="#modalCodigoPix">
+                                Presentear esse
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+    </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+</body>
+<script type="application/javascript">
+    function activateLink() {
+        let path = window.location.pathname;
+        let page = path.split("/").pop();
+        // page = page.substring(0, page.indexOf('.'));
+        let element = null;
+        if(page.length === 0) {
+            element = document.getElementById('nav-link-index');
+        } else {
+            element = document.getElementById('nav-link-' + page);
+        }
+        if(element != null) {
+            element.classList.add('active');
+            element.style.color = 'var(--cor-principal)';
+            element.color.opacity = 0.9;
+        }
+    }
+    activateLink();
+</script>
+
+<script type="application/javascript">
+    function reativarBotao() {
+        let button = document.getElementById("buttonCopiarCodigoPix");
+        button.classList.replace("btn-golden", "btn-outline-golden");
+        button.innerHTML = "Copiar";
+    }
+
+    function copiarCodigoPix() {
+        let button = document.getElementById("buttonCopiarCodigoPix");
+
+        let inputField = document.getElementById("campoTextoCodigoPix");
+
+        // copia o código pix
+        inputField.select();
+        inputField.setSelectionRange(0, 99999);  // para dispositivos móveis
+        navigator.clipboard.writeText(inputField.value);
+
+        button.classList.replace("btn-outline-golden", "btn-golden");
+        button.innerHTML = "Copiado!";
+
+        let timeoutID = setTimeout(reativarBotao, 5000);
+    }
+    document.getElementById("buttonCopiarCodigoPix").addEventListener("click", copiarCodigoPix);
+</script>
+
+</html>
