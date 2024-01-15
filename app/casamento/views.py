@@ -28,23 +28,27 @@ def attendance(request):
 # TODO nota para o futuro: servir arquivos estáticos assim não
 #  é eficiente. Ler a documentação do DJango para mais detalhes!
 def photos(request):
-    photos = {
+    photo_list = {
         'photos': [{'name': f"/static/images/gallery/{x}", 'number': i} for i, x in
         enumerate(os.listdir(os.path.join(str(settings.STATICFILES_DIRS[0]), 'images', 'gallery')))]
     }
     return render(
         request,
         'casamento/fotos.html',
-        context=photos
+        context=photo_list
     )
 
 
 def gifts(request):
-    with open(os.path.join(str(settings.STATICFILES_DIRS[0]), 'images', 'gifts', 'gifts.json'), 'r') as gift_file:
+    with open(
+        os.path.join(str(settings.STATICFILES_DIRS[0]), 'images', 'gifts', 'gifts.json'), 'r', encoding='utf-8'
+    ) as gift_file:
         gift_list = json.load(gift_file)
+
+    context = {'gifts': gift_list}
 
     return render(
         request,
         'casamento/presentes.html',
-        context={'gifts': gift_list}
+        context=context
     )

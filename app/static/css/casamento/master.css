@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Carattere&family=Dancing+Script&family=Merriweather&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Carattere&family=Dancing+Script&family=Merriweather&family=Great+Vibes&display=swap');
 
 :root {
     --cor-principal: #876F4A;
     --cor-secundaria: #FFEEF7;
     --cor-principal-escura: #735e3f;
     --cor-principal-clara: #ae936b;
+    --cor-de-fundo: #ffd9ed;
 }
 
 .cor-principal {
@@ -17,7 +17,7 @@
 }
 
 body {
-    background: linear-gradient(45deg, transparent 49%, #ffd9ed 49% 51%, transparent 51%) , linear-gradient(-45deg, transparent 49%, #ffd9ed 49% 51%, transparent 51%);
+    background: linear-gradient(45deg, transparent 49%, var(--cor-de-fundo) 49% 51%, transparent 51%) , linear-gradient(-45deg, transparent 49%, var(--cor-de-fundo) 49% 51%, transparent 51%);
     background-size: 3em 3em;
     background-color: #ffffff;
     opacity: 1
@@ -60,7 +60,7 @@ body {
 }
 
 .subtitulo {
-    font-family: 'Caveat', cursive;
+    font-family: 'Carattere', cursive;
 }
 
 .texto {

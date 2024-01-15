@@ -1,6 +1,5 @@
 from django.urls import path
-from django.conf.urls.static import static
-from django.conf import settings
+from django_distill import distill_path
 
 from . import views
 
@@ -10,5 +9,6 @@ urlpatterns = [
     path('local', views.place, name='local do evento'),
     path('fotos', views.photos, name='galeria de fotos'),
     path('presentes', views.gifts, name='lista de presentes'),
+    # distill_path('presentes.html', views.gifts, name='lista de presentes'),  # TODO para gerar as páginas, use assim
     path('presenca', views.attendance, name='confirmar presença'),
 ]
