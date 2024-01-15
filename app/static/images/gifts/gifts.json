@@ -1,12 +1,27 @@
 [
   {
-    "titulo": "Jantar Romântico",
-    "imagem": "/static/images/gifts/jantar.jpg",
+    "titulo": "Aluguel de Bicicletas",
+    "imagem": "/static/images/gifts/bicicleta.jpg",
+    "valor": "50"
+  },
+  {
+    "titulo": "Visita aos Moinhos de Vento",
+    "imagem": "/static/images/gifts/moinhos.jpg",
+    "valor": "50"
+  },
+  {
+    "titulo": "Passeio de Barco pelos Canais",
+    "imagem": "/static/images/gifts/canais.jpg",
     "valor": "100"
   },
   {
-    "titulo": "Passeio de Lambreta",
-    "imagem": "/static/images/gifts/lambreta.jpg",
+    "titulo": "Visita aos Campos de Tulipas",
+    "imagem": "/static/images/gifts/tulipas.png",
     "valor": "200"
+  },
+  {
+    "titulo": "Jantar Romântico",
+    "imagem": "/static/images/gifts/jantar.avif",
+    "valor": "300"
   }
 ]

@@ -49,7 +49,8 @@
                                 <input
                                     type="text"
                                     style="background-color: var(--cor-principal-clara); color: white; padding-left: 10px;"
-                                    class="form-control form-control-plaintext texto" id="campoTextoCodigoPix"
+                                    id="campoTextoCodigoPix"
+                                    class="form-control form-control-plaintext input-custom texto"
                                     aria-describedby="text" readonly
                                     value="henry.cagnini@gmail.com"
                                 >
@@ -78,6 +79,19 @@
     </div>
     <div class="row row-cols-1 row-cols-md-3 g-4">
         {% for gift in gifts %}
+             {% if forloop.counter0 == 0 %}
+                <div class="col">
+                    <div class="d-flex justify-content-center">
+                        <div class="d-flex align-items-center">
+                            <img
+                                alt="um cachorro humanizado segurando uma caixa de presentes"
+                                src="{% static 'images/icons/presentes.png' %}"
+                                style="width: 200px;"
+                        >
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
             <div class="col">
                 <div class="card">
                     <img src="{{ gift.imagem }}" class="card-img-top" alt="Foto do card">

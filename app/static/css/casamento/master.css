@@ -16,17 +16,36 @@
     color: var(--cor-secundaria);
 }
 
+.cor-principal-escura {
+    color: var(--cor-principal-escura);
+}
+
+.titulo {
+    font-family: 'Great Vibes', cursive;
+}
+
+.subtitulo {
+    font-family: 'Carattere', cursive;
+}
+
+.texto {
+    font-family: 'Merriweather', serif;
+}
+
 body {
     background: linear-gradient(45deg, transparent 49%, var(--cor-de-fundo) 49% 51%, transparent 51%) , linear-gradient(-45deg, transparent 49%, var(--cor-de-fundo) 49% 51%, transparent 51%);
     background-size: 3em 3em;
     background-color: #ffffff;
     opacity: 1
-    /*
-    opacity: 1;
-    background-image:  linear-gradient(30deg, #ffffff 12%, transparent 12.5%, transparent 87%, #ffffff 87.5%, #ffffff), linear-gradient(150deg, #ffffff 12%, transparent 12.5%, transparent 87%, #ffffff 87.5%, #ffffff), linear-gradient(30deg, #ffffff 12%, transparent 12.5%, transparent 87%, #ffffff 87.5%, #ffffff), linear-gradient(150deg, #ffffff 12%, transparent 12.5%, transparent 87%, #ffffff 87.5%, #ffffff), linear-gradient(60deg, #ffffff77 25%, transparent 25.5%, transparent 75%, #ffffff77 75%, #ffffff77), linear-gradient(60deg, #ffffff77 25%, transparent 25.5%, transparent 75%, #ffffff77 75%, #ffffff77);
-    background-size: 20px 35px;
-    background-position: 0 0, 0 0, 10px 18px, 10px 18px, 0 0, 10px 18px;
-     */
+}
+
+.board {
+    background-color: #ffffff;
+}
+
+.bg-white {
+    --bs-bg-opacity: 1;
+    background-color: #ffffff !important;
 }
 
 .btn-golden {
@@ -51,22 +70,16 @@ body {
     color: white;
 }
 
-.board {
-    background-color: #ffffff;
-}
-
-.titulo {
-    font-family: 'Great Vibes', cursive;
-}
-
-.subtitulo {
-    font-family: 'Carattere', cursive;
-}
-
-.texto {
-    font-family: 'Merriweather', serif;
-}
-
 .card-hand:hover {
     cursor: pointer;
+}
+
+.input-custom::selection {
+    color: var(--cor-principal);
+    background-color: white;
+}
+
+.input-custom:focus {
+    color: var(--cor-principal);
+    background-color: white;
 }
