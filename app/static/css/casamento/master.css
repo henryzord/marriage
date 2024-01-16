@@ -53,6 +53,10 @@ body {
     color: white;
 }
 
+.btn-golden:focus {
+    border-color: var(--cor-principal-escura);
+}
+
 .btn-golden:hover {
     background-color: var(--cor-principal-escura);
     color: white;
@@ -82,4 +86,5 @@ body {
 .input-custom:focus {
     color: var(--cor-principal);
     background-color: white;
+    border-color: var(--cor-principal-escura);
 }
