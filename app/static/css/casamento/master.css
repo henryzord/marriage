@@ -32,6 +32,14 @@
     font-family: 'Merriweather', serif;
 }
 
+h1 {
+    font-size: 30pt;
+}
+
+h2 {
+    font-size: 20pt;
+}
+
 body {
     background: linear-gradient(45deg, transparent 49%, var(--cor-de-fundo) 49% 51%, transparent 51%) , linear-gradient(-45deg, transparent 49%, var(--cor-de-fundo) 49% 51%, transparent 51%);
     background-size: 3em 3em;
@@ -55,6 +63,8 @@ body {
 
 .btn-golden:focus {
     border-color: var(--cor-principal-escura);
+    outline: 0;
+    box-shadow: 0 0 0 .25rem rgba(174,147,107, 0.25);  /*  cor principal clara */
 }
 
 .btn-golden:hover {
@@ -87,4 +97,17 @@ body {
     color: var(--cor-principal);
     background-color: white;
     border-color: var(--cor-principal-escura);
+    outline: 0;
+    box-shadow: 0 0 0 .25rem rgba(174,147,107, 0.25);  /*  cor principal clara */
+}
+
+.form-control:focus {
+    color: var(--cor-principal-escura);
+    border-color: var(--cor-principal-escura);
+    outline: 0;
+    box-shadow: 0 0 0 .25rem rgba(174,147,107, 0.25);  /*  cor principal clara */
+}
+
+.form-control {
+    color: var(--cor-principal-escura);
 }

@@ -9,18 +9,7 @@
 {% block content %}
     <div class="row">
         <div class="col-12">
-            <div class="row">
-                <div class="col-12">
-                    <h2 class="subtitulo cor-principal text-center">Galeria de fotos</h2>
-                </div>
-            </div>
-            <!--<div class="row">
-                <div class="col-12">
-                    <h6 class="texto text-center">
-                        Um espaço de lembranças!
-                    </h6>
-                </div>
-            </div>-->
+            <h1 class="subtitulo cor-principal-escura text-center">Galeria de fotos</h1>
         </div>
     </div>
     <!-- begin região dos modais! -->
@@ -44,13 +33,34 @@
         </div>
     {% endfor %}
     <!-- end região dos modais! -->
-    <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="row row-cols-1 row-cols-md-3 g-4 align-items-center">
         {% for photo in photos %}
+            {% if forloop.counter0 == 0 %}
+                <div class="col">
+                    <div class="d-flex justify-content-center">
+                        <img
+                            alt="um cachorro humanizado tirando uma fotografia com uma câmera nas mãos"
+                            src="{% static 'images/icons/fotos.png' %}"
+                            style="width: 50%;"
+                        >
+                    </div>
+                </div>
+            {% endif %}
             <div class="col">
                 <div class="card-hand card" data-bs-toggle="modal" data-bs-target="#modal{{ photo.number }}">
                     <img src="{{ photo.name }}" class="card-img-top" alt="Foto do card">
                 </div>
             </div>
         {% endfor %}
+        <!-- insere outra figurinha para equilibrar o template -->
+        <div class="col">
+            <div class="d-flex justify-content-center">
+                <img
+                    alt="um cachorro humanizado tirando uma fotografia com uma câmera nas mãos"
+                    src="{% static 'images/icons/noivos.png' %}"
+                    style="width: 50%;"
+                >
+            </div>
+        </div>
     </div>
 {% endblock %}
