@@ -23,53 +23,18 @@
             <h1 class="subtitulo cor-principal-escura text-center">Galeria de fotos</h1>
         </div>
     </div>
-    <!-- begin região dos modais! -->
-    <!-- Modal -->
-    {% for photo in photos %}
-        <div class="modal fade" id="modal{{ photo.number }}" tabindex="-1" aria-labelledby="modal{{ photo.number }}Label" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <!--<h5 class="modal-title" id="modal{{ photo.number }}Label">Modal title</h5>-->
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <img src="{{ photo.name }}" class="card-img-top" alt="Foto do modal">
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-golden texto" data-bs-dismiss="modal">Fechar</button>
-                    </div>
-                </div>
-            </div>
+    <div class="row">
+        <div class="col-12">
+            <p class="lead texto cor-principal text-center">Em breve</p>
         </div>
-    {% endfor %}
-    <!-- end região dos modais! -->
-    <div class="row row-cols-1 row-cols-md-3 g-4 align-items-center">
-        {% for photo in photos %}
-            {% if forloop.counter0 == 0 %}
-                <div class="col d-none d-md-block">
-                    <div class="d-flex justify-content-center">
-                        <img
-                            alt="um cachorro humanizado tirando uma fotografia com uma câmera nas mãos"
-                            src="{% static 'images/icons/fotos.png' %}"
-                            style="width: 50%;"
-                        >
-                    </div>
-                </div>
-            {% endif %}
-            <div class="col">
-                <div class="card-hand card" data-bs-toggle="modal" data-bs-target="#modal{{ photo.number }}">
-                    <img src="{{ photo.name }}" class="card-img-top" alt="Foto do card">
-                </div>
-            </div>
-        {% endfor %}
-        <!-- insere outra figurinha para equilibrar o template -->
-        <div class="col">
+    </div>
+    <div class="row">
+        <div class="col-12 d-none d-md-block">
             <div class="d-flex justify-content-center">
                 <img
-                    alt="um casal de cachorros humanizados, trajados como noivos"
-                    src="{% static 'images/icons/noivos.png' %}"
-                    style="width: 50%;"
+                    alt="um cachorro humanizado tirando uma fotografia com uma câmera nas mãos"
+                    src="{% static 'images/icons/fotos.png' %}"
+                    style="width: 10%;"
                 >
             </div>
         </div>
