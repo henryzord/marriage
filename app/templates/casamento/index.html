@@ -9,7 +9,18 @@
 {% block content %}
     <div class="container-fluid">
         <div class="d-flex row align-items-center"> <!-- linha única -->
-            <div class="col-12 col-md-4 order-2 order-md-1">
+            <div class="col-12 order-1 d-md-none">
+                <div class="align-items-start">
+                    <div class="d-flex justify-content-center">
+                        <img
+                            alt="um casal de cachorros humanizados, trajados como noivos"
+                            src="{% static 'images/icons/noivos.png' %}"
+                            style="width: 40%;"
+                        >
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 order-2 order-md-1 d-none d-md-block">
                 <div class="align-items-start">
                     <div class="d-flex justify-content-center">
                         <img
@@ -45,7 +56,7 @@
 {#                    </div>#}
                 </div>
             </div>
-            <div class="col-12 col-md-4 order-3 order-md-3">
+            <div class="col-12 col-md-4 order-3 order-md-3 d-none d-md-block">
                 <div class=" align-items-start">
                     <div class="d-flex justify-content-center">
                         <img
@@ -54,6 +65,34 @@
                             style="width: 75%;"
                         >
                     </div>
+                </div>
+            </div>
+            <!-- duas flores juntas, embaixo -->
+            <!-- aparece apenas em telas pequenas -->
+            <div class="col-12 order-4 d-md-none">
+                <div class="row">
+{#                    <div class="col-6">#}
+{#                        <div class="align-items-start">#}
+{#                            <div class="d-flex justify-content-center">#}
+{#                                <img#}
+{#                                    alt="lírio rosa"#}
+{#                                    src="{% static 'images/icons/flor_rosa.png' %}"#}
+{#                                    style="width: 75%;"#}
+{#                                >#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                    <div class="col-6">#}
+{#                        <div class=" align-items-start">#}
+{#                            <div class="d-flex justify-content-center">#}
+{#                                <img#}
+{#                                    alt="lírio bege"#}
+{#                                    src="{% static 'images/icons/flor_bege_invertida.png' %}"#}
+{#                                    style="width: 75%;"#}
+{#                                >#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </div>#}
                 </div>
             </div>
         </div>

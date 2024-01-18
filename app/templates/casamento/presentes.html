@@ -8,6 +8,17 @@
 
 {% block content %}
     <div class="row">
+        <div class="col-12 d-block d-md-none">
+            <div class="d-flex justify-content-center">
+                <img
+                    alt="um cachorro humanizado segurando uma caixa de presentes"
+                    src="{% static 'images/icons/presentes.png' %}"
+                    style="width: 30%;"
+                >
+            </div>
+        </div>
+    </div>
+    <div class="row">
         <div class="col-12">
             <h1 class="subtitulo cor-principal-escura text-center">Lista de Presentes</h1>
         </div>
@@ -32,14 +43,14 @@
                         >
                     </div>
                     <div class="d-flex justify-content-center">
-                        <div class="row row-cols-1 row-cols-md-2 g-2">
+                        <div class="row row-cols-1 g-2 row-cols-md-2">
                             <div class="col col-12 col-md-8">
                                 <!--<label for="campoTextoCodigoPix" class="form-label">Copiar código</label>-->
                                 <input
                                     type="text"
                                     style="background-color: var(--cor-principal-clara); color: white; padding-left: 10px;"
                                     id="campoTextoCodigoPix"
-                                    class="form-control form-control-plaintext input-custom texto"
+                                    class="form-control form-control-plaintext input-custom texto text-center"
                                     aria-describedby="text" readonly
                                     value="ju.mozza@gmail.com"
                                 >
@@ -69,7 +80,7 @@
     <div class="row row-cols-1 row-cols-md-3 g-4 align-items-center">
         {% for gift in gifts %}
              {% if forloop.counter0 == 0 %}
-                <div class="col">
+                <div class="col d-none d-md-block">
                     <div class="d-flex justify-content-center">
                         <img
                             alt="um cachorro humanizado segurando uma caixa de presentes"

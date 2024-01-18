@@ -8,8 +8,19 @@
 
 {% block content %}
     <div class="container-fluid">
+        <div class="row">
+            <div class="col d-block d-md-none">
+                <div class="d-flex justify-content-center">
+                    <img
+                        alt="um cachorro humanizado com um mapa na mão"
+                        src="{% static 'images/icons/local.png' %}"
+                        style="width: 30%;"
+                    >
+                </div>
+            </div>
+        </div>
         <div class="row"> <!-- linha principal -->
-            <div class="col-md-2 col-sm-12 order-3 order-md-1">  <!-- cachorrinho -->
+            <div class="col-md-2 col-sm-12 order-3 order-md-1 d-none d-md-block">  <!-- cachorrinho -->
                 <div class="row">
                     <div class="col">
                         <h1 class="subtitulo">‎ </h1>
@@ -19,17 +30,17 @@
                     <img
                         alt="um cachorro humanizado com um mapa na mão"
                         src="{% static 'images/icons/local.png' %}"
-                        style="width: 150px;"
+                        style="width: 80%;"
                     >
                 </div>
             </div>
             <div class="col-md-4 col-sm-12 order-1 order-md-2 cor-principal">  <!-- informações textuais -->
                 <div class="row">
                     <div class="col">
-                        <h1 class="subtitulo cor-principal-escura">Local do evento</h1>
+                        <h1 class="subtitulo cor-principal-escura text-center text-md-start">Local do evento</h1>
                     </div>
                 </div>
-                <dl class="row">
+                <dl class="row text-center text-md-start">
                     <dt class="col-sm-3 texto cor-principal-escura">Salão</dt>
                     <dd class="col-sm-9 texto">Quintal 155</dd>
 
