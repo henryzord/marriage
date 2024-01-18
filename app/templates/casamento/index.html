@@ -9,18 +9,18 @@
 {% block content %}
     <div class="container-fluid">
         <div class="d-flex row align-items-center"> <!-- linha única -->
-            <div class="col-12 order-1 d-md-none">
+            <div class="col-12 order-1 d-xl-none">
                 <div class="align-items-start">
                     <div class="d-flex justify-content-center">
                         <img
                             alt="um casal de cachorros humanizados, trajados como noivos"
                             src="{% static 'images/icons/noivos.png' %}"
-                            style="width: 40%;"
+                            style="width: 20%;"
                         >
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-md-4 order-2 order-md-1 d-none d-md-block">
+            <div class="col-12 col-xl-4 order-2 order-xl-1 d-none d-xl-block">
                 <div class="align-items-start">
                     <div class="d-flex justify-content-center">
                         <img
@@ -31,23 +31,37 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-md-4 order-1 order-md-2">
+            <div class="col-12 col-xl-4 order-1 order-xl-2">
                 <div class="align-items-start">
-                    <div class="d-flex justify-content-center">
-                        <h1 class="titulo cor-principal text-center">Juliana & Henry</h1>
+                    <div class="row">
+                        <div class="col">
+                            <div class="d-flex justify-content-center">
+                                <h1 class="titulo cor-principal text-center">Juliana & Henry</h1>
+                            </div>
+                        </div>
                     </div>
-                    <div class="d-flex justify-content-center">
-                        <p class="texto cor-principal text-center" style="font-size: 12pt;">
-                            <i>
-                            Nossa história começou há quase 14 anos. Depois de muito amor e carinho, é hora de
-                            oficializar nossa união. Este é um convite que fazemos a você para participar deste
-                            importante capítulo em nossas vidas. Ficaremos muito felizes com sua presença!
-                            </i>
-                        </p>
+                    <div class="row">
+                        <div class="col-3 d-block d-xl-none">
+
+                        </div>
+                        <div class="col-6 col-xl-12">
+                            <div class="d-flex justify-content-center">
+                                <p class="texto cor-principal text-center" style="font-size: 12pt;">
+                                    <i>
+                                    Nossa história começou há quase 14 anos. Depois de muito amor e carinho, é hora de
+                                    oficializar nossa união. Este é um convite que fazemos a você para participar deste
+                                    importante capítulo em nossas vidas. Ficaremos muito felizes com sua presença!
+                                    </i>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-3 d-block d-xl-none">
+
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-md-4 order-3 order-md-3 d-none d-md-block">
+            <div class="col-12 col-xl-4 order-3 order-xl-3 d-none d-xl-block">
                 <div class=" align-items-start">
                     <div class="d-flex justify-content-center">
                         <img
@@ -60,7 +74,7 @@
             </div>
             <!-- duas flores juntas, embaixo -->
             <!-- aparece apenas em telas pequenas -->
-            <div class="col-12 order-4 d-md-none">
+            <div class="col-12 order-4 d-xl-none">
                 <div class="row">
 {#                    <div class="col-6">#}
 {#                        <div class="align-items-start">#}
