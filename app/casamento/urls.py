@@ -1,14 +1,12 @@
 from django.urls import path
-from django_distill import distill_path
-
 from . import views
 
 urlpatterns = [
-    path('', views.index, name='index'),
-    path('index', views.index, name='index'),
-    path('local', views.place, name='local do evento'),
-    path('fotos', views.photos, name='galeria de fotos'),
-    path('presentes', views.gifts, name='lista de presentes'),
-    # distill_path('presentes.html', views.gifts, name='lista de presentes'),  # TODO para gerar as páginas, use assim
-    path('presenca', views.attendance, name='confirmar presença'),
+    path('', views.IndexView.as_view(), name='index'),
+    path('index', views.IndexView.as_view(), name='index'),
+    path('local', views.PlaceView.as_view(), name='local do evento'),
+    # path('fotos', views.photos, name='galeria de fotos'),
+    path('fotos', views.PhotosView.as_view(), name='galeria de fotos'),
+    path('presentes', views.GiftsView.as_view(), name='lista de presentes'),
+    path('presenca', views.AttendanceView.as_view(), name='confirmar presença'),
 ]

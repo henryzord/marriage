@@ -1,54 +1,52 @@
-from django.shortcuts import render
+from bakery.views import BuildableTemplateView
 from django.conf import settings
 import json
 import os
+from django.views.generic import TemplateView
 
 
-def index(request):
-    return render(
-        request,
-        'casamento/index.html'
-    )
+class IndexView(BuildableTemplateView):
+    template_name = "casamento/index.html"
+    build_path = 'index.html'
 
 
-def place(request):
-    return render(
-        request,
-        'casamento/local.html'
-    )
+class PlaceView(BuildableTemplateView):
+    template_name = 'casamento/local.html'
+    build_path = 'local.html'
 
 
-def attendance(request):
-    return render(
-        request,
-        'casamento/presenca.html'
-    )
+class AttendanceView(BuildableTemplateView):
+    template_name = 'casamento/presenca.html'
+    build_path = 'presenca.html'
 
 
-# TODO nota para o futuro: servir arquivos estáticos assim não
-#  é eficiente. Ler a documentação do DJango para mais detalhes!
-def photos(request):
-    photo_list = {
-        'photos': [{'name': f"/static/images/gallery/{x}", 'number': i} for i, x in
-        enumerate(os.listdir(os.path.join(str(settings.STATICFILES_DIRS[0]), 'images', 'gallery')))]
-    }
-    return render(
-        request,
-        'casamento/fotos.html',
-        context=photo_list
-    )
+class PhotosView(BuildableTemplateView):
+    template_name = 'casamento/fotos.html'
+    build_path = 'fotos.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        context['photos'] = [
+            {'name': f"/static/images/gallery/{x}", 'number': i}
+            for i, x in enumerate(os.listdir(os.path.join(str(settings.STATICFILES_DIRS[0]), 'images', 'gallery')))
+        ]
+
+        return context
 
 
-def gifts(request):
-    with open(
-        os.path.join(str(settings.STATICFILES_DIRS[0]), 'images', 'gifts', 'gifts.json'), 'r', encoding='utf-8'
-    ) as gift_file:
-        gift_list = json.load(gift_file)
+class GiftsView(BuildableTemplateView):
+    template_name = 'casamento/presentes.html'
+    build_path = 'presentes.html'
 
-    context = {'gifts': gift_list}
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
 
-    return render(
-        request,
-        'casamento/presentes.html',
-        context=context
-    )
+        with open(
+                os.path.join(str(settings.STATICFILES_DIRS[0]), 'images', 'gifts', 'gifts.json'), 'r', encoding='utf-8'
+        ) as gift_file:
+            gift_list = json.load(gift_file)
+
+        context['gifts'] = gift_list
+
+        return context

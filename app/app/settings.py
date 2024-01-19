@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'bootstrap5',  # bootstrap nas páginas
     'crispy_forms',  # bootstrap nos formulários
     'crispy_bootstrap5',  # bootstrap nos formulários
+    'bakery'  # salvar views como páginas estáticas
 ]
 
 MIDDLEWARE = [
@@ -127,6 +128,18 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [BASE_DIR / 'static']
+
+# para a bakery
+BUILD_DIR = [BASE_DIR.parent / 'docs']
+
+# para a bakery também
+BAKERY_VIEWS = (
+    'casamento.views.IndexView',
+    'casamento.views.PlaceView',
+    'casamento.views.AttendanceView',
+    'casamento.views.PhotosView',
+    'casamento.views.GiftsView',
+)
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
