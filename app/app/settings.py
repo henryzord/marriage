@@ -126,7 +126,7 @@ CRISPY_TEMPLATE_PACK = 'bootstrap5'
 STATIC_URL = 'static/'
 
 # apenas para deployment
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATIC_ROOT = BASE_DIR.parent / 'docs' / 'static'
 
 # para desenvolvimento
 STATICFILES_DIRS = [BASE_DIR / 'static']
