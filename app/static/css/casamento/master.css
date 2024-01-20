@@ -33,21 +33,38 @@
 }
 
 h1 {
-    font-size: 30pt;
+    font-size: 1.2rem;
 }
 
 h2 {
-    font-size: 20pt;
+    font-size: 1.2rem;
 }
 
 html {
   font-size: 1rem;
 }
 
+@include media-breakpoint-up(sm) {
+  html {
+    font-size: 1.2rem;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  html {
+    font-size: 1.4rem;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  html {
+    font-size: 1.6rem;
+  }
+}
+
 body {
-    background: linear-gradient(45deg, transparent 49%, var(--cor-de-fundo) 49% 51%, transparent 51%) , linear-gradient(-45deg, transparent 49%, var(--cor-de-fundo) 49% 51%, transparent 51%);
     background-size: 3em 3em;
-    background-color: #ffffff;
+    background: #ffffff linear-gradient(45deg, transparent 49%, var(--cor-de-fundo) 49% 51%, transparent 51%) linear-gradient(-45deg, transparent 49%, var(--cor-de-fundo) 49% 51%, transparent 51%);
     opacity: 1
 }
 

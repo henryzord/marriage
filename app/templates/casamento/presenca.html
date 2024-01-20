@@ -9,20 +9,24 @@
 {% block content %}
 <div class="container-fluid">
     <div class="row"> <!-- linha de cima -->
-        <div class="col-12 col-xl-3 order-2 order-xl-1">
+        <div class="col-12 col-xl-3"> <!-- padding para xl. não aparece no pequeno -->
         </div>
-        <div class="col-12 col-xl-6 order-1 order-xl-2">
+        <div class="col-12 col-xl-6">
             <div class="row align-items-center">
-                <div class="col-12 col-xl-3 order-1 order-xl-1">  <!-- cachorrinho -->
+                <div class="col-4 d-block d-xl-none"> <!-- padding para pequeno. não aparece no xl -->
+                </div>
+                <div class="col-4 col-xl-3">  <!-- cachorrinho -->
                     <div class="d-flex justify-content-center">
                         <img
                                 alt="um cachorro humanizado com um convite na mão"
                                 src="{% static 'images/icons/confirmacao.png' %}"
-                                style="width: 20%;"
+                                class="img-fluid"
                         >
                     </div>
                 </div>
-                <div class="col-12 col-xl-9 order-2 order-xl-2">
+                <div class="col-4 d-block d-xl-none"> <!-- padding para pequeno. não aparece no xl -->
+                </div>
+                <div class="col-12 col-xl-9">
                     <div class="row">
                         <div class="col">
                             <h1 class="text-center text-xl-start subtitulo cor-principal-escura">Confirmar Presença</h1>
@@ -37,30 +41,16 @@
                             </p>
                         </div>
                     </div>
-                    {#                <div class="row">#}
-                    {#                    <div class="col">#}
-                    {#                        <p class="texto cor-principal">#}
-                    {#                            Ligando ou mandando uma mensagem para<br/><b>(55) 999 999 999</b>#}
-                    {#                        </p>#}
-                    {#                    </div>#}
-                    {#                </div>#}
-                    {#                <div class="row">#}
-                    {#                    <div class="col">#}
-                    {#                        <p class="texto cor-principal">#}
-                    {#                            Preenchendo o formulário a seguir:#}
-                    {#                        </p>#}
-                    {#                    </div>#}
-                    {#                </div>#}
                 </div>
             </div>
-            <div class="col-12 col-xl-3 order-3 order-xl-3">
+            <div class="col-12 col-xl-3">
             </div>
         </div>
     </div>
     <div class="row"> <!-- linha de baixo -->
-        <div class="col-12 col-xl-3 order-2 order-xl-1">
+        <div class="col-12 col-xl-3">
         </div>
-        <div class="col-12 col-xl-6 order-1 order-xl-2">
+        <div class="col-12 col-xl-6">
             <form class="row g-2" onsubmit="return false;">
                 <div class="col-12 col-xl-6 texto cor-principal">
                     <label for="inputNome" class="form-label">Nome e Sobrenome</label>
@@ -92,7 +82,7 @@
                 </div>
             </form>
         </div>
-        <div class="col-12 col-xl-3 order-3 order-xl-3">
+        <div class="col-12 col-xl-3">  <!-- padding para xl. não aparece no pequeno -->
         </div>
     </div>
 </div>
