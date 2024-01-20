@@ -41,8 +41,9 @@ h2 {
 }
 
 body {
+    background: linear-gradient(45deg, transparent 49%, var(--cor-de-fundo) 49% 51%, transparent 51%) , linear-gradient(-45deg, transparent 49%, var(--cor-de-fundo) 49% 51%, transparent 51%);
     background-size: 3em 3em;
-    background: #ffffff linear-gradient(45deg, transparent 49%, var(--cor-de-fundo) 49% 51%, transparent 51%) linear-gradient(-45deg, transparent 49%, var(--cor-de-fundo) 49% 51%, transparent 51%);
+    background-color: #ffffff;
     opacity: 1
 }
 
