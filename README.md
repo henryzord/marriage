@@ -1,9 +1,11 @@
 
-<img alt="casal de noivos" src="app/static/images/icons/noivos.png" style="width: 50%;">
+<img alt="casal de noivos" src="app/static/img/icons/noivos.png" style="width: 50%;">
 
 # Casamento
 
 Site do nosso casamento!
+
+Link: https://henryzord.github.io/marriage
 
 ## Instalação
 

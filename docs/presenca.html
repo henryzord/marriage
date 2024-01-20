@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" rel="stylesheet">
+    <script crossorigin="anonymous" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/static/img/favicon-32x32.png">
+    <title>
+    J&H · Confirmar Presença
+</title>
+    
+    <link rel="stylesheet" type="text/css" href="/static/css/casamento/master.css">
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a id="brand" class="navbar-brand titulo" href="#" style="color: var(--cor-principal-escura);">
+                Juliana & Henry
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+            Menu
+            <!--<span class="navbar-toggler-icon"></span>-->
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a id="nav-link-index" class="nav-link texto" href="/index">Página inicial</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="nav-link-local" class="nav-link texto" href="/local">Local do evento</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="nav-link-presentes" class="nav-link texto" href="/presentes">Lista de presentes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="nav-link-presenca" class="nav-link texto" href="/presenca">Confirmar presença</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="nav-link-fotos" class="nav-link texto" href="/fotos">Galeria de fotos</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<section>
+    <div class="container board shadow-sm p-3 mb-5 bg-body rounded">
+        <div class="row">
+            <div class="col">
+                
+<div class="container-fluid">
+    <div class="row"> <!-- linha de cima -->
+        <div class="col-12 col-xl-3"> <!-- padding para xl. não aparece no pequeno -->
+        </div>
+        <div class="col-12 col-xl-6">
+            <div class="row align-items-center">
+                <div class="col-4 d-block d-xl-none"> <!-- padding para pequeno. não aparece no xl -->
+                </div>
+                <div class="col-4 col-xl-3">  <!-- cachorrinho -->
+                    <div class="d-flex justify-content-center">
+                        <img
+                                alt="um cachorro humanizado com um convite na mão"
+                                src="/static/img/icons/confirmacao.png"
+                                class="img-fluid"
+                        >
+                    </div>
+                </div>
+                <div class="col-4 d-block d-xl-none"> <!-- padding para pequeno. não aparece no xl -->
+                </div>
+                <div class="col-12 col-xl-9">
+                    <div class="row">
+                        <div class="col">
+                            <h1 class="text-center text-xl-start subtitulo cor-principal-escura">Confirmar Presença</h1>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <p class="texto cor-principal">
+                                Para confirmar sua presença, por favor, preencha o formulário abaixo, que enviará uma
+                                mensagem pelo WhatsApp. Se estiver com problemas para enviá-lo, entre em contato com o
+                                número <b class="cor-principal-escura">(55) 991 285 399.</b>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-xl-3">
+            </div>
+        </div>
+    </div>
+    <div class="row"> <!-- linha de baixo -->
+        <div class="col-12 col-xl-3">
+        </div>
+        <div class="col-12 col-xl-6">
+            <form class="row g-2" onsubmit="return false;">
+                <div class="col-12 col-xl-6 texto cor-principal">
+                    <label for="inputNome" class="form-label">Nome e Sobrenome</label>
+                    <input type="text" class="form-control" id="inputNome" placeholder="João da Silva">
+                </div>
+                <div class="col-12 col-xl-6 texto cor-principal">
+                    <label for="inputTelefone" class="form-label">Telefone</label>
+                    <input type="text" class="form-control" id="inputTelefone" placeholder="(55) 999 999 999">
+                </div>
+                <div class="col-12 texto cor-principal">
+                    <label for="inputAcompanhantes" class="form-label">
+                        Incluindo você, para quantas pessoas você está confirmando presença?
+                    </label>
+                    <input type="number" class="form-control" id="inputPessoas" aria-describedby="helpConfirmacao">
+                    <div id="helpConfirmacao" class="form-text">Se a confirmação é apenas para você, escreva 1 (uma
+                        pessoa)
+                    </div>
+                </div>
+                <div class="col-12 texto cor-principal">
+                    <label for="inputCriancas" class="form-label">Das pessoas que você está confirmando presença,
+                        quantas são crianças de 7 anos ou menos?</label>
+                    <input type="number" class="form-control" id="inputCriancas" aria-describedby="helpCriancas">
+                    <div id="helpCriancas" class="form-text">Se não houver nenhuma criança na sua confirmação,
+                        escreva 0 (nenhuma)
+                    </div>
+                </div>
+                <div class="col-auto">
+                    <button id="buttonConfirmar" type="submit" class="btn btn-golden">Confirmar presença</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-12 col-xl-3">  <!-- padding para xl. não aparece no pequeno -->
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+</body>
+<script type="application/javascript">
+    function activateLink() {
+        let path = window.location.pathname;
+        let page = path.split("/").pop();
+        if(page.includes(".")) {
+            page = page.substring(0, page.indexOf('.'));    
+        }
+        let element = null;
+        if(page.length === 0) {
+            element = document.getElementById('nav-link-index');
+        } else {
+            element = document.getElementById('nav-link-' + page);
+        }
+        if(element != null) {
+            element.classList.add('active');
+            element.style.color = 'var(--cor-principal)';
+            element.style.opacity = 0.9;
+        }
+    }
+    activateLink();
+</script>
+
+    <script type="application/javascript">
+        function generateLink() {
+            let nome = document.getElementById('inputNome').value;
+            let telefone = document.getElementById('inputTelefone').value;
+            let pessoas = document.getElementById('inputPessoas').value;
+            let criancas = document.getElementById('inputCriancas').value;
+
+            let message = 'Olá! Estou confirmando minha presença no casamento da Juliana e do Henry.%0A%0A' +
+                '*Nome:* ' + nome + "%0A*Telefone:* " + telefone + "%0A*Número de pessoas:* " + pessoas + '%0A*Crianças de 7 anos ou menos:* ' + criancas;
+
+            let url = 'https://wa.me/55991285399?text=' + message;
+            window.open(url);
+        }
+
+        document.getElementById('buttonConfirmar').addEventListener('click', generateLink);
+
+    </script>
+
+</html>
