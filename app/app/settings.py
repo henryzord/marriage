@@ -37,7 +37,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django_distill',  # gerar páginas html estáticas
     'bootstrap5',  # bootstrap nas páginas
     'crispy_forms',  # bootstrap nos formulários
     'crispy_bootstrap5',  # bootstrap nos formulários
