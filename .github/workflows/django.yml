@@ -31,4 +31,6 @@ jobs:
     - name: Deploy Static Files
       run: |
         python app/manage.py collectstatic --noinput
+    - name: Build Html Files
+      run: |
         python app/manage.py build --keep-build-dir --skip-static --skip-media
