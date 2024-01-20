@@ -126,15 +126,14 @@ CRISPY_TEMPLATE_PACK = 'bootstrap5'
 STATIC_URL = 'static/'
 
 # apenas para deployment
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 # para desenvolvimento
 STATICFILES_DIRS = [BASE_DIR / 'static']
 
 
 # para a bakery
-# BUILD_DIR = [BASE_DIR.parent / 'docs']
-BUILD_DIR = ['docs']  # TODO testing
+BUILD_DIR = BASE_DIR.parent / 'docs'
 
 # para a bakery também
 BAKERY_VIEWS = (
