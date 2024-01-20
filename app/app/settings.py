@@ -123,13 +123,18 @@ CRISPY_TEMPLATE_PACK = 'bootstrap5'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
+STATIC_URL = 'static/'
+
+# apenas para deployment
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-STATIC_URL = 'static/'
+# para desenvolvimento
 STATICFILES_DIRS = [BASE_DIR / 'static']
 
+
 # para a bakery
-BUILD_DIR = [BASE_DIR.parent / 'docs']
+# BUILD_DIR = [BASE_DIR.parent / 'docs']
+BUILD_DIR = ['docs']  # TODO testing
 
 # para a bakery também
 BAKERY_VIEWS = (

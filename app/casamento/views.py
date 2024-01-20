@@ -28,8 +28,8 @@ class PhotosView(BuildableTemplateView):
         context = super().get_context_data(**kwargs)
 
         context['photos'] = [
-            {'name': f"/static/images/gallery/{x}", 'number': i}
-            for i, x in enumerate(os.listdir(os.path.join(str(settings.STATICFILES_DIRS[0]), 'images', 'gallery')))
+            {'name': f"/static/img/gallery/{x}", 'number': i}
+            for i, x in enumerate(os.listdir(os.path.join(str(settings.STATICFILES_DIRS[0]), 'img', 'gallery')))
         ]
 
         return context
@@ -43,7 +43,7 @@ class GiftsView(BuildableTemplateView):
         context = super().get_context_data(**kwargs)
 
         with open(
-                os.path.join(str(settings.STATICFILES_DIRS[0]), 'images', 'gifts', 'gifts.json'), 'r', encoding='utf-8'
+                os.path.join(str(settings.STATICFILES_DIRS[0]), 'img', 'gifts', 'gifts.json'), 'r', encoding='utf-8'
         ) as gift_file:
             gift_list = json.load(gift_file)
 
