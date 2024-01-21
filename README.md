@@ -1,5 +1,5 @@
 
-<img alt="casal de noivos" src="app/static/img/icons/noivos.png" style="width: 50%;">
+<img alt="casal de noivos" src="app/static/marriage/img/icons/noivos.png" style="width: 50%;">
 
 # Casamento
 
