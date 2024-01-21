@@ -28,6 +28,18 @@ jobs:
     - name: Run Tests
       run: |
         python app/manage.py test
-    - name: Build Html Files
+    - name: Baking Pages with django-bakery
       run: |
          python app/manage.py build
+    - name: Setup Pages
+      uses: actions/configure-pages@v3
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v1
+      with:
+        # Upload docs directory content
+        path: 'docs/'
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v1
+      env:  
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
