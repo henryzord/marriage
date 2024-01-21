@@ -97,3 +97,29 @@
         </div>
     </div>
 {% endblock %}
+{% block scripts %}
+    <script type="application/javascript">
+
+        function hideTooltip() {
+            {#let spanMenu = document.getElementById('spanMenu');#}
+            {#let tooltip = new bootstrap.Tooltip(spanMenu);#}
+            tooltip.hide();    
+        }
+    
+        function showTooltip() {
+            //let tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+            //let tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            //    return new bootstrap.Tooltip(tooltipTriggerEl);
+            //});
+    
+            let spanMenu = document.getElementById('spanMenu');
+            let tooltip = new bootstrap.Tooltip(spanMenu);
+            tooltip.show();
+            return tooltip;
+        }
+        
+        let tooltip = showTooltip();
+        let timeoutID = setTimeout(hideTooltip, 5000);
+
+    </script>
+{% endblock %}

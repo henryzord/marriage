@@ -135,7 +135,7 @@ STATICFILES_DIRS = [BASE_DIR / 'static']
 # para a bakery
 BUILD_DIR = BASE_DIR.parent / 'docs'
 
-# para a bakery também
+# para a bakery
 BAKERY_VIEWS = (
     'casamento.views.IndexView',
     'casamento.views.PlaceView',
