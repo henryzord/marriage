@@ -10,6 +10,13 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    permissions:
+      contents: 'read'
+      id-token: 'write'
+      pages: 'write'
+      actions: 'write'
+      checks: 'write'
+      deployments: 'write'
     strategy:
       max-parallel: 4
       matrix:
