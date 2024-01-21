@@ -1,27 +1,27 @@
 [
   {
     "titulo": "Aluguel de Bicicletas",
-    "imagem": "/static/marriage/img/gifts/bicicleta.jpg",
+    "imagem": "marriage/static/img/gifts/bicicleta.jpg",
     "valor": "50"
   },
   {
     "titulo": "Visita aos Moinhos de Vento",
-    "imagem": "/static/marriage/img/gifts/moinhos.jpg",
+    "imagem": "marriage/static/img/gifts/moinhos.jpg",
     "valor": "50"
   },
   {
     "titulo": "Passeio de Barco pelos Canais",
-    "imagem": "/static/marriage/img/gifts/canais.jpg",
+    "imagem": "marriage/static/img/gifts/canais.jpg",
     "valor": "100"
   },
   {
     "titulo": "Visita aos Campos de Tulipas",
-    "imagem": "/static/marriage/img/gifts/tulipas.png",
+    "imagem": "marriage/static/img/gifts/tulipas.png",
     "valor": "200"
   },
   {
     "titulo": "Jantar Romântico",
-    "imagem": "/static/marriage/img/gifts/jantar.png",
+    "imagem": "marriage/static/img/gifts/jantar.png",
     "valor": "300"
   }
 ]
