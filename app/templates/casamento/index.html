@@ -100,21 +100,34 @@
 {% block scripts %}
     <script type="application/javascript">
 
+        function isHidden(el) {
+            return (el.offsetParent === null);
+        }
+
         function hideTooltip() {
             {#let spanMenu = document.getElementById('spanMenu');#}
             {#let tooltip = new bootstrap.Tooltip(spanMenu);#}
-            tooltip.hide();    
+            tooltip.hide();
         }
     
         function showTooltip() {
-            //let tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
-            //let tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-            //    return new bootstrap.Tooltip(tooltipTriggerEl);
-            //});
+            /*
+            let tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+            let tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl);
+            });
+             */
     
             let spanMenu = document.getElementById('spanMenu');
-            let tooltip = new bootstrap.Tooltip(spanMenu);
-            tooltip.show();
+            let tooltip = new bootstrap.Tooltip(spanMenu, {
+                trigger: 'manual',
+                title: 'Clique aqui para confirmar sua presença!',
+                placement: 'left'
+            });
+
+            if(!isHidden(spanMenu)) {
+                tooltip.show();
+            }
             return tooltip;
         }
         
