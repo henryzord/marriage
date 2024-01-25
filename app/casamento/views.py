@@ -46,6 +46,8 @@ class GiftsView(BuildableTemplateView):
                 os.path.join(str(settings.STATICFILES_DIRS[0]), 'img', 'gifts', 'gifts.json'), 'r', encoding='utf-8'
         ) as gift_file:
             gift_list = json.load(gift_file)
+            for item in gift_list:
+                item['imagem'] = item['imagem'].replace('{{ STATIC_URL }}', settings.STATIC_URL)
 
         context['gifts'] = gift_list
 
