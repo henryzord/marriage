@@ -3,3 +3,5 @@ django-bootstrap-v5
 django-crispy-forms
 crispy-bootstrap5
 django-bakery
+Pillow
+tqdm

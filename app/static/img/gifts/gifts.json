@@ -1,27 +1,27 @@
 [
   {
     "titulo": "Aluguel de Bicicletas",
-    "imagem": "{{ STATIC_URL }}img/gifts/bicicleta.jpg",
+    "imagem": "{{ STATIC_URL }}img/gifts/bicicleta.webp",
     "valor": "50"
   },
   {
     "titulo": "Visita aos Moinhos de Vento",
-    "imagem": "{{ STATIC_URL }}img/gifts/moinhos.jpg",
+    "imagem": "{{ STATIC_URL }}img/gifts/moinhos.webp",
     "valor": "50"
   },
   {
     "titulo": "Passeio de Barco pelos Canais",
-    "imagem": "{{ STATIC_URL }}img/gifts/canais.jpg",
+    "imagem": "{{ STATIC_URL }}img/gifts/canais.webp",
     "valor": "100"
   },
   {
     "titulo": "Visita aos Campos de Tulipas",
-    "imagem": "{{ STATIC_URL }}img/gifts/tulipas.png",
+    "imagem": "{{ STATIC_URL }}img/gifts/tulipas.webp",
     "valor": "200"
   },
   {
     "titulo": "Jantar Romântico",
-    "imagem": "{{ STATIC_URL }}img/gifts/jantar.png",
+    "imagem": "{{ STATIC_URL }}img/gifts/jantar.webp",
     "valor": "300"
   }
 ]
