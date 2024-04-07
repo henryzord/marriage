@@ -27,7 +27,9 @@ class PhotosView(BuildableTemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
 
-        pics = [x for x in os.listdir(os.path.join(settings.STATICFILES_DIRS[0], 'img', 'gallery')) if '.webp' in x]
+        pics = sorted(
+            [x for x in os.listdir(os.path.join(settings.STATICFILES_DIRS[0], 'img', 'gallery')) if '.webp' in x]
+        )
 
         context['photos'] = [
             {'name': f"/marriage/static/img/gallery/{x}", 'number': i}
