@@ -1,0 +1,12 @@
+name: marriage
+channels:
+  - defaults
+dependencies:
+  - pip
+  - python=3.12.*
+  - pip:
+      - Django
+      - django-bootstrap-v5
+      - django-crispy-forms
+      - crispy-bootstrap5
+      - django-bakery

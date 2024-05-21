@@ -12,9 +12,8 @@ Link: https://henryzord.github.io/marriage
 Usa o gerenciador de pacotes [Python Anaconda](https://www.anaconda.com/download)
 
 ```bash
-conda create --name marriage python==3.12 pip --yes
+conda env create -f environment.yml
 conda activate marriage
-pip install -r requirements.txt
 ```
 
 ## Execução

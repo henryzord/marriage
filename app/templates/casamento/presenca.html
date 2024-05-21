@@ -35,9 +35,11 @@
                     <div class="row">
                         <div class="col">
                             <p class="texto cor-principal">
+                                O evento já passou! Mas você pode conferir como era o formulário de submissão nesta 
+                                página.
+                                
                                 Para confirmar sua presença, por favor, preencha o formulário abaixo, que enviará uma
-                                mensagem pelo WhatsApp. Se estiver com problemas para enviá-lo, entre em contato com o
-                                número <b class="cor-principal-escura">(55) 991 285 399.</b>
+                                mensagem pelo WhatsApp.
                             </p>
                             <p class="texto cor-principal">Favor confirmar até <b>31/03/2024.</b></p>
                         </div>
@@ -99,7 +101,7 @@
             let message = 'Olá! Estou confirmando minha presença no casamento da Juliana e do Henry.%0A%0A' +
                 '*Nome:* ' + nome + "%0A*Telefone:* " + telefone + "%0A*Número de pessoas:* " + pessoas + '%0A*Crianças de 7 anos ou menos:* ' + criancas;
 
-            let url = 'https://wa.me/55991285399?text=' + message;
+            let url = 'https://wa.me/' + telefone + '?text=' + message;
             window.open(url);
         }
 
