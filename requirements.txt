@@ -1,5 +1,7 @@
 Django
-django-bootstrap-v5
+django-bootstrap-v5==1.*
 django-crispy-forms
-crispy-bootstrap5
-django-bakery
+crispy-bootstrap5==2023.*
+django-bakery==0.13.*
+Pillow
+tqdm
