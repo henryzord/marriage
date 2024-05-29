@@ -32,7 +32,7 @@ class PhotosView(BuildableTemplateView):
         )
 
         context['photos'] = [
-            {'name': f"/marriage/static/img/gallery/{x}", 'number': i}
+            {'name': f"{settings.STATIC_URL}img/gallery/{x}", 'number': i}
             for i, x in enumerate(pics)
         ]
 
