@@ -24,12 +24,23 @@ class PhotosView(BuildableTemplateView):
     template_name = 'casamento/fotos.html'
     build_path = 'fotos.html'
 
+    def __recursively_add_pictures__(self, path):
+        contents = sorted(os.listdir(path))
+        pics = []
+        for content in contents:
+            rel_path = os.path.join(path, content)
+            if os.path.isdir(rel_path):
+                pics += self.__recursively_add_pictures__(rel_path)
+            elif '.webp' in content.lower():
+                pics += [rel_path]
+
+        return pics
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
 
-        pics = sorted(
-            [x for x in os.listdir(os.path.join(settings.STATICFILES_DIRS[0], 'img', 'gallery')) if '.webp' in x]
-        )
+        parent_folder = os.path.join(settings.STATICFILES_DIRS[0], 'img', 'gallery')
+        pics = self.__recursively_add_pictures__(parent_folder)
 
         context['photos'] = [
             {'name': f"{settings.STATIC_URL}img/gallery/{x}", 'number': i}

@@ -5,6 +5,8 @@ dependencies:
   - pip
   - python=3.12.*
   - pip:
+      - Pillow
+      - tqdm
       - Django
       - django-bootstrap-v5
       - django-crispy-forms

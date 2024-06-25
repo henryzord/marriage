@@ -1,8 +1,7 @@
+__description__ = """
+    Converte imagens de PNG/JPG para WEBP. Só precisa ser executado quando novas imagens são adicionadas.
 """
-Converte imagens de PNG/JPG para WEBP.
 
-Só precisa ser executado quando novas imagens são adicionadas.
-"""
 import os
 import argparse
 from PIL import Image
@@ -30,7 +29,7 @@ def main(path):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(
-        description='Converte imagens de PNG/JPG para WEBP.'
+        description=__description__
     )
 
     parser.add_argument(
