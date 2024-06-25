@@ -2,7 +2,7 @@ from bakery.views import BuildableTemplateView
 from django.conf import settings
 import json
 import os
-from django.views.generic import TemplateView
+import pathlib
 
 
 class IndexView(BuildableTemplateView):
@@ -32,7 +32,7 @@ class PhotosView(BuildableTemplateView):
             if os.path.isdir(rel_path):
                 pics += self.__recursively_add_pictures__(rel_path)
             elif '.webp' in content.lower():
-                pics += [rel_path]
+                pics += ['/'.join([os.path.basename(os.path.dirname(rel_path)), content])]
 
         return pics
 
